@@ -1,0 +1,25 @@
+print("calculadora de promedios ")
+print("¿Cuántas notas son?")
+num_notas = int(input("Ingrese la cantidad de notas a promediar: "))
+# variable de suma 
+suma = 0
+i = 1
+print("Vamos a sacar el promedio de las notas para saber si pasas o no.")
+while i <= num_notas:
+    nota = float(input(f"Ingresa la nota {i}: "))
+    suma += nota
+    i += 1
+promedio = suma / num_notas
+
+resultado = {
+     "raspando": 2.9 <= promedio < 5,
+    "pasa": promedio >= 5,
+    "perdio": promedio < 2.9
+}
+# Guardar los resultados en un archivo
+with open("notas_finales.txt", "w") as file:
+    file.write("Este es tu promedio: \n")
+    file.write(f"{promedio}\n")
+    file.write("Este es el resultado de sus notas, veamos cómo te fue:\n")
+    for key, value in resultado.items():
+        file.write(f"{key}: {'sí' if value else 'no'}\n")

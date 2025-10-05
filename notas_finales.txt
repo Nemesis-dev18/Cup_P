@@ -1,0 +1,6 @@
+Este es tu promedio: 
+10.0
+Este es el resultado de sus notas, veamos cómo te fue:
+raspando pasas: no
+pasas: sí
+perdiste: no
